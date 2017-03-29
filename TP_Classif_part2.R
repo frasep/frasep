@@ -7,6 +7,7 @@ head(donclassif2)
 dim(donclassif2)
 plot(donclassif2)
 kmeansclust <- kmeans(donclassif2, 1000, iter.max=1)
+plot(donclassif2, col=kmeansclust$cluster)
 dim(kmeansclust$centers)
 
 distdon2 <- dist(kmeansclust$centers)
@@ -15,3 +16,6 @@ plot(donclassif2,col=myhclustdon2$cluster+1)
 
 res <- cutree(myhclustdon2,7)
 plot(donclassif2,col=res)
+
+# mapping kmeans hclust
+
